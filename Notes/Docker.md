@@ -36,5 +36,24 @@ fa0392d26607        centos:latest       "/bin/bash"         17 seconds ago      
 10. 以上步骤只是确定docker运行正常，创建的这些都可以删掉
 ### CONFIG
 1. FILE SHARING
-小海豚settings里设置共享文件夹
+小海豚settings里设置共享文件夹 通过-v 来挂载
+2. 端口映射：建议-P 随机映射
+3. image是静态的，把他run起来作为container使用,所以把端口，文件共享，交互后台运行都算上，命令如下
+```shell
+docker run -itd -P -v D:/DockerShare:/home centos
+docker rename 8a3b1983159a junyi_cpp 这个id需要自己docker ps看
+```
+4. 进入容器
+```shell
+docker exec -it 8a3b1983159a /bin/bash
+```
+这样就进到了linux环境下
+5. 退出容器 exit 退出后 docker ps看一下 容器应当还在运行中
+### daily work
+```shell
+docker start junyi_cpp
+docker exec -it junyi_cpp /bin/bash
+一顿操作
+exit
+```
 
