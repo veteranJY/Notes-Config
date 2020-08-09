@@ -40,7 +40,8 @@ fa0392d26607        centos:latest       "/bin/bash"         17 seconds ago      
 2. 端口映射：建议-P 随机映射
 3. image是静态的，把他run起来作为container使用,所以把端口，文件共享，交互后台运行都算上，命令如下
 ```shell
-docker run -itd -P -v D:/DockerShare:/home centos
+docker run -p 8080:8080 -p 8888:8888 -p 7193:7193 -p 8000:8000 -p 9999:9999 -dit -v D:/DockerShare:/home centos
+
 docker rename 8a3b1983159a junyi_cpp 这个id需要自己docker ps看
 ```
 4. 进入容器
