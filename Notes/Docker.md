@@ -2,7 +2,7 @@
 
 [toc]
 
-## install and config
+## Docker desktop
 ### INSTALL AND PULL
 1. install docker desktop
 2. pull image of centos
@@ -57,4 +57,13 @@ docker exec -it junyi_cpp /bin/bash
 一顿操作
 exit
 ```
-
+## DEV CONFIG
+### CPP
+```shell
+yum install gcc
+yum install gcc-c++
+yum install gdb
+yum install autoconf
+yum install automake
+```
+### 
