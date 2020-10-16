@@ -63,3 +63,9 @@ public class Singleton<T> where T : class, new()
 ```
 ## 行为型模式
 ### 观察者模式 （发布/订阅）
+<img src="https://design-patterns.readthedocs.io/zh_CN/latest/_images/Obeserver.jpg"/>
+以微信公众号为例，公众号就是Subject，用户就是Observer，Subject下维护了一个List，存储了所有的Observer，当公众号有新推送时，就会notify所有的Observer。redis里的pub/sub用channel的方式代替了List。
+
+### 策略模式
+策略模式对应一个很经典的场景：商店的优惠算法。
+商店有多种优惠算法，打折，优惠券，满减，买二送一，等等。每一种优惠算法都是一种“策略”，策略是可替换的，这个月想打折，下个月用优惠券。为了便于维护代码，就使用策略模式，每一种具体的算法是一个子类，所有的算法子类都是策略类（抽象父类）的子类，只要持有一个策略类对象，就可以动态的绑定不同的子类对象，典型的里式替换原则的使用。
