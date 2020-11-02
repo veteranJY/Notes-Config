@@ -61,6 +61,12 @@ public class Singleton<T> where T : class, new()
     }
 } 
 ```
+
+### Object Pool Pattern
+例子：用户点击一下鼠标，就要从屏幕外飞来一个陨石然后落到屏幕底部，下落过程中有爆炸和流星拖痕。如果用户在短时间内点了多次，就会对电脑的性能造成负担。因此引入Object Pool模式，它希望优化实例化大量对象时的内存使用效率。即：对象可以复用，一个陨石爆炸之后还可以接着用，而不是每次点击都“真的创建一个新的陨石对象”。Pool本身是一个容器类，应当用单例模式去实现，内部的陨石对象，在create时要根据情况返回新建的对象或者可用的引用。
+
+
+
 ## 行为型模式
 ### 观察者模式 （发布/订阅）
 <img src="https://design-patterns.readthedocs.io/zh_CN/latest/_images/Obeserver.jpg"/>
